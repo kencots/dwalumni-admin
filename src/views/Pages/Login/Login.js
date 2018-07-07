@@ -1,8 +1,58 @@
 import React, { Component } from 'react';
 import { Button, Card, CardBody, CardGroup, Col, Container, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
+import axios from 'axios'
 
 class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      password:'',
+      isChecked:false,
+      status:400
+    };
+
+    this.handleChangeUsername = this.handleChangeUsername.bind(this);
+    this.handleChangePasswd = this.handleChangePasswd.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this); }
+
+     handleChangeUsername(event) {
+        this.setState({username : event.target.value});
+      }
+      handleChangePasswd(event){
+        this.setState({password:event.target.value});
+      }
+      handleSubmit(){
+        const self=this
+        if(this.state.username === "" || this.state.password === "" ){
+          alert("Maaf, ada data yang kosong/ belum terisi !!")
+        }else{
+           axios({
+                  method:'post',
+                  url:'http://192.168.0.6:8000/api/authentication/',
+                  headers:{
+                    "Content-Type":"application/json"
+                  },
+                  data:{
+                    username: this.state.username,
+                    password: this.state.password
+                  }
+                }).then(function(response){
+                  const status= response.request.status;
+                  const token=response.data.token
+                  self.setState({status:status})
+                  localStorage.setItem('token',token)
+                  window.location.href="http://localhost:3000/#/dashboard"
+                }).catch(function(error){
+                  alert(error);
+                })
+        }
+          !this.state.isChecked ? this.setState({username:'',password:'',isChecked:false}):'';
+          //event.preventDefault();
+
+      }
   render() {
+    console.log(this.state.password);
     return (
       <div className="app flex-row align-items-center">
         <Container>
@@ -19,7 +69,7 @@ class Login extends Component {
                           <i className="icon-user"></i>
                         </InputGroupText>
                       </InputGroupAddon>
-                      <Input type="text" placeholder="Username" />
+                      <Input type="text" placeholder="Username" value={this.state.username} onChange={this.handleChangeUsername} />
                     </InputGroup>
                     <InputGroup className="mb-4">
                       <InputGroupAddon addonType="prepend">
@@ -27,11 +77,11 @@ class Login extends Component {
                           <i className="icon-lock"></i>
                         </InputGroupText>
                       </InputGroupAddon>
-                      <Input type="password" placeholder="Password" />
+                      <Input type="password" placeholder="Password" value={this.state.password} onChange={this.handleChangePasswd} />
                     </InputGroup>
                     <Row>
                       <Col xs="6">
-                        <Button color="primary" className="px-4">Login</Button>
+                        <Button color="primary" className="px-4" onClick={this.handleSubmit}>Login</Button>
                       </Col>
                       <Col xs="6" className="text-right">
                         <Button color="link" className="px-0">Forgot password?</Button>

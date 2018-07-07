@@ -181,9 +181,22 @@ const User = Loadable({
   loader: () => import('./views/Users/User'),
   loading: Loading,
 });
-
-
-
+const PersonalInfo= Loadable({
+  loader:()=> import('./views/Personal-info/Personal-info'),
+   loading: Loading,
+});
+const Portfolio= Loadable({
+  loader:()=> import('./views/Portfolio/portfolio'),
+   loading: Loading,
+});
+const Article= Loadable({
+  loader:()=> import('./views/Articles/article'),
+   loading: Loading,
+});
+const Certificate = Loadable({
+  loader:()=> import('./views/Certificates/certificate'),
+   loading: Loading,
+});
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/', exact: true, name: 'Home', component: DefaultLayout },
@@ -227,6 +240,10 @@ const routes = [
   { path: '/charts', name: 'Charts', component: Charts },
   { path: '/users', exact: true,  name: 'Users', component: Users },
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
+  { path:'/user-profil/personal-info',exact:true,name:'Personal Information',component:PersonalInfo},
+  { path: '/user-profil/portfolio', exact:true, name:'Portfolio', component:Portfolio},
+  { path: '/user-profil/articles', exact:true, name:'Article', component:Article},
+  { path: '/user-profil/certificates', exact:true, name:'Certificate', component:Certificate}
 ];
 
 export default routes;

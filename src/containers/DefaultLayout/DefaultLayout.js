@@ -24,6 +24,7 @@ import DefaultHeader from './DefaultHeader';
 
 class DefaultLayout extends Component {
   render() {
+    const token= localStorage.getItem('token');
     return (
       <div className="app">
         <AppHeader fixed>
@@ -48,7 +49,8 @@ class DefaultLayout extends Component {
                       : (null);
                   },
                 )}
-                <Redirect from="/" to="/dashboard" />
+                {token != "" ? <Redirect from="/" to="/dashboard" />:<Redirect from="/" to="/login" /> }
+                
               </Switch>
             </Container>
           </main>

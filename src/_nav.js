@@ -1,14 +1,72 @@
+const token=localStorage.getItem('token');
 export default {
   items : [
     {
       name : 'Dashboard' , 
-      url : "/dashboard" ,
+      url   : token !=""? "/login":"/dashboard",
       icon  : "icon-speedometer",
       class : "",
       badge : {
         variant : 'danger',
-        text : "hilmi"
+        text : "Kencots"
       }
+    },
+    {
+    name : 'User profil',
+    url : "/user-profil", 
+    icon: "icon-user",
+    children:[
+      {
+        name:'Personal Information',
+        url:'/user-profil/personal-info',
+      },
+       {
+        name:'Portfolio',
+        url:'/user-profil/portfolio',
+      },
+       {
+        name:'Articles',
+        url:'/user-profil/articles',
+      },
+       {
+        name:'Certificate',
+        url:'/user-profil/certificates',
+      },
+    ]
+    },
+    {
+      name:'Skill Management',
+      url:'/skill',
+      icon:'icon-settings',
+      children:[
+        {
+          name:'Main Skill',
+          url:'/skill/main'
+        },
+        {
+          name:'General Skill',
+          url:'skill/general'
+        },
+        {
+          name:'Detail Skill',
+          url:'/skill/detail'
+        }
+      ]
+    },
+    {
+      name:"Examination Report",
+      url:"/exam",
+      icon:"icon-info",
+      children:[
+        {
+          name:"View Report",
+          url:"exam/view"
+        },
+        {
+          name:"Add Report",
+          url:"exam/add"
+        }
+      ]
     }
   ]
 }
