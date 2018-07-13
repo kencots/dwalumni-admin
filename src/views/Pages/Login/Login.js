@@ -29,7 +29,7 @@ class Login extends Component {
         }else{
            axios({
                   method:'post',
-                  url:'http://192.168.0.6:8000/api/authentication/',
+                  url:'http://localhost:8000/api/authentication/',
                   headers:{
                     "Content-Type":"application/json"
                   },

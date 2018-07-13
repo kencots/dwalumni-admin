@@ -6,7 +6,7 @@ import usersData from './UsersData'
 function UserRow(props) {
   console.log(window.location.href)
   const user = props.user
-  const userLink = `#/users/${user.id}`
+  const userLink = `#/exam/report/${user.id}`
   const getBadge = (status) => {
     return status === 'Active' ? 'success' :
       status === 'Inactive' ? 'secondary' :
@@ -26,7 +26,7 @@ function UserRow(props) {
   )
 }
 
-class Users extends Component {
+class Users2 extends Component {
 
   render() {
 
@@ -66,4 +66,4 @@ class Users extends Component {
   }
 }
 
-export default Users;
+export default Users2;
