@@ -18,12 +18,8 @@ export default {
       icon : 'icon-user',
       children:[
         {
-          name:'Alumni',
-          url :'/user-m/alumni'
-        },
-        {
           name:'Hiring Partner',
-          url :'/user-m/partner'
+          url :'/HiringPartner/hiringpartner'
         }
       ]
     },
