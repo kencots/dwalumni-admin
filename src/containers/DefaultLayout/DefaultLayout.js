@@ -49,7 +49,7 @@ class DefaultLayout extends Component {
                       : (null);
                   },
                 )}
-                {token != "" ? <Redirect from="/" to="/dashboard" />:<Redirect from="/" to="/login" /> }
+                {token !== "" ? <Redirect from="/" to="/dashboard" />:<Redirect from="/" to="/login" /> }
                 
               </Switch>
             </Container>

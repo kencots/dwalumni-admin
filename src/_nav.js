@@ -1,9 +1,10 @@
 const token=localStorage.getItem('token');
+console.log(token);
 export default {
   items : [
     {
       name : 'Dashboard' , 
-      url   : token !=""? "/login":"/dashboard",
+      url   : token != null ? '/login':'/dashboard',
       icon  : "icon-speedometer",
       class : "",
       badge : {
@@ -12,27 +13,19 @@ export default {
       }
     },
     {
-    name : 'User profil',
-    url : "/user-profil", 
-    icon: "icon-user",
-    children:[
-      {
-        name:'Personal Information',
-        url:'/user-profil/personal-info',
-      },
-       {
-        name:'Portfolio',
-        url:'/user-profil/portfolio',
-      },
-       {
-        name:'Articles',
-        url:'/user-profil/articles',
-      },
-       {
-        name:'Certificate',
-        url:'/user-profil/certificates',
-      },
-    ]
+      name: 'User Management',
+      url: '/user-m',
+      icon : 'icon-user',
+      children:[
+        {
+          name:'Alumni',
+          url :'/user-m/alumni'
+        },
+        {
+          name:'Hiring Partner',
+          url :'/user-m/partner'
+        }
+      ]
     },
     {
       name:'Skill Management',
@@ -64,7 +57,7 @@ export default {
         },
         {
           name:"Add Report",
-          url:"exam/add"
+          url:"users/exam"
         }
       ]
     }

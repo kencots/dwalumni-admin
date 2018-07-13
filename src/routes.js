@@ -176,18 +176,13 @@ const Users = Loadable({
   loader: () => import('./views/Users/Users'),
   loading: Loading,
 });
-
+const Users2 = Loadable({
+  loader: () => import('./views/Users/Users2'),
+  loading: Loading,
+});
 const User = Loadable({
   loader: () => import('./views/Users/User'),
   loading: Loading,
-});
-const PersonalInfo= Loadable({
-  loader:()=> import('./views/Personal-info/Personal-info'),
-   loading: Loading,
-});
-const Portfolio= Loadable({
-  loader:()=> import('./views/Portfolio/portfolio'),
-   loading: Loading,
 });
 const Article= Loadable({
   loader:()=> import('./views/Articles/article'),
@@ -195,6 +190,10 @@ const Article= Loadable({
 });
 const Certificate = Loadable({
   loader:()=> import('./views/Certificates/certificate'),
+   loading: Loading,
+});
+const examReport = Loadable({
+  loader:()=> import('./views/examReport/examReport'),
    loading: Loading,
 });
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
@@ -239,11 +238,11 @@ const routes = [
   { path: '/widgets', name: 'Widgets', component: Widgets },
   { path: '/charts', name: 'Charts', component: Charts },
   { path: '/users', exact: true,  name: 'Users', component: Users },
+  { path: '/users/exam', exact: true,  name: 'Users2', component: Users2 },
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
-  { path:'/user-profil/personal-info',exact:true,name:'Personal Information',component:PersonalInfo},
-  { path: '/user-profil/portfolio', exact:true, name:'Portfolio', component:Portfolio},
   { path: '/user-profil/articles', exact:true, name:'Article', component:Article},
-  { path: '/user-profil/certificates', exact:true, name:'Certificate', component:Certificate}
+  { path: '/user-profil/certificates', exact:true, name:'Certificate', component:Certificate},
+  { path: '/exam/report/:id', exact:true, name:'examReport', component:examReport},
 ];
 
 export default routes;
