@@ -4,7 +4,7 @@ import { Badge, Card, CardBody, CardHeader, Col, Row, Table } from 'reactstrap';
 import usersData from './UsersData'
 
 function UserRow(props) {
-  console.log(window.location.href)
+  //console.log(window.location.href)
   const user = props.user
   const userLink = `#/users/${user.id}`
   const getBadge = (status) => {
@@ -30,7 +30,8 @@ class Users extends Component {
 
   render() {
 
-    const userList = usersData.filter((user) => user.id < 10)
+    //const userList = usersData.filter((user) => user.id < 10)
+     const userList = usersData
 
     return (
       <div className="animated fadeIn">

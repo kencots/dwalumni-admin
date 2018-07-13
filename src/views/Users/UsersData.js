@@ -1,3 +1,14 @@
+import axios from 'axios'
+
+const token =localStorage.getItem('token');
+const userData  = axios({
+        method:'GET',
+        url : 'http://localhost:8000/api/user/',
+        headers : {
+          'Content-Type':'application/json',
+          'Authorization':"JWT "+token
+        }
+      })
 const usersData = [
   {id: 0, name: 'John Doe', registered: '2018/01/01', role: 'Guest', status: 'Pending'},
   {id: 1, name: 'Samppa Nori', registered: '2018/01/01', role: 'Member', status: 'Active'},

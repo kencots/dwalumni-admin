@@ -57,7 +57,7 @@ export default {
         },
         {
           name:"Add Report",
-          url:"users/exam"
+          url:"/users/exam"
         }
       ]
     }
