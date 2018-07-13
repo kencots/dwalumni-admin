@@ -192,6 +192,10 @@ const Certificate = Loadable({
   loader:()=> import('./views/Certificates/certificate'),
    loading: Loading,
 });
+const HiringPartner= Loadable({
+  loader:()=> import('./views/HiringPartner/hiringpartner'),
+   loading: Loading,
+});
 const Mainskill = Loadable({
   loader:()=> import('./views/Skill/mainskill'),
    loading: Loading,
@@ -257,7 +261,8 @@ const routes = [
   { path: '/skill/mainskill', exact:true, name:'Mainskill', component:Mainskill},
   { path: '/skill/generalskill', exact:true, name:'Generalskill', component:Generalskill},
   { path: '/skill/detailskill', exact:true, name:'Detailskill', component:Detailskill},
-  { path: '/exam/report/:id', exact:true, name:'examReport', component:examReport}
+  { path: '/exam/report/:id', exact:true, name:'examReport', component:examReport},
+  { path: '/HiringPartner/hiringpartner', exact:true, name:'HiringPartner', component:HiringPartner}
 ];
 
 export default routes;
