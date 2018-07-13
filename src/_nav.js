@@ -41,15 +41,15 @@ export default {
       children:[
         {
           name:'Main Skill',
-          url:'/skill/main'
+          url:'/skill/mainskill'
         },
         {
           name:'General Skill',
-          url:'skill/general'
+          url:'/skill/generalskill'
         },
         {
           name:'Detail Skill',
-          url:'/skill/detail'
+          url:'/skill/detailskill'
         }
       ]
     },

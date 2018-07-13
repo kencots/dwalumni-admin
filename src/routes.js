@@ -197,6 +197,19 @@ const Certificate = Loadable({
   loader:()=> import('./views/Certificates/certificate'),
    loading: Loading,
 });
+const Mainskill = Loadable({
+  loader:()=> import('./views/Skill/mainskill'),
+   loading: Loading,
+});
+const Generalskill = Loadable({
+  loader:()=> import('./views/Skill/generalskill'),
+   loading: Loading,
+});
+const Detailskill = Loadable({
+  loader:()=> import('./views/Skill/detailskill'),
+   loading: Loading,
+});
+
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/', exact: true, name: 'Home', component: DefaultLayout },
@@ -243,7 +256,10 @@ const routes = [
   { path:'/user-profil/personal-info',exact:true,name:'Personal Information',component:PersonalInfo},
   { path: '/user-profil/portfolio', exact:true, name:'Portfolio', component:Portfolio},
   { path: '/user-profil/articles', exact:true, name:'Article', component:Article},
-  { path: '/user-profil/certificates', exact:true, name:'Certificate', component:Certificate}
+  { path: '/user-profil/certificates', exact:true, name:'Certificate', component:Certificate},
+  { path: '/skill/mainskill', exact:true, name:'Mainskill', component:Mainskill},
+  { path: '/skill/generalskill', exact:true, name:'Generalskill', component:Generalskill},
+  { path: '/skill/detailskill', exact:true, name:'Detailskill', component:Detailskill}
 ];
 
 export default routes;
