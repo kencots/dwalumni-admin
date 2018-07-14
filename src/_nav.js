@@ -48,10 +48,6 @@ export default {
       icon:"icon-info",
       children:[
         {
-          name:"View Report",
-          url:"exam/view"
-        },
-        {
           name:"Add Report",
           url:"/users/exam"
         }
