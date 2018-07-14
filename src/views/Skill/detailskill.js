@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Card, CardBody, CardHeader, Row, Col, Table } from "reactstrap";
 
 class Detailskill extends Component {
+  
   render() {
     return (
       <div className="detailskill">
